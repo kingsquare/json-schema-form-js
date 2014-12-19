@@ -6,8 +6,7 @@ var renderEnum = function (propConfig, path, value) {
 	if ((value === undefined) && (propConfig['default'] !== undefined)) {
 		value = propConfig['default'];
 	}
-	var enumTitles = ((propConfig.options && propConfig.options.enum_titles) ?
-		propConfig.options.enum_titles : {});
+	var enumTitles = (propConfig.enumTitles || []);
 
 	switch(propConfig.inputType) {
 		case 'radio':
@@ -43,7 +42,7 @@ var renderChunk = function (path, propConfig, value) {
 	var chunk = ['<div class="' + propName +'" data-datatype="' + propConfig.type + '">'];
 	var subPath = path.slice(0);
 	var name = 'root' + (path.length ? '[' + path.join('][')+ ']' : '') + '[' + propName + ']';
-	var enumTitles = (propConfig.options && propConfig.options.enum_titles ?  propConfig.options.enum_titles : {});
+	var enumTitles = (propConfig.enumTitles ? propConfig.enumTitles : []);
 	subPath.push(propName);
 
 	if ((value === undefined) && (propConfig['default'] !== undefined)) {
