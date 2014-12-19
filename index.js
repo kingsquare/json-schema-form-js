@@ -38,7 +38,6 @@ var renderEnum = function (propConfig, path, value) {
 };
 
 var renderChunk = function (path, propConfig, value) {
-	console.log(path);
 	var propName = path.pop();
 	var id = (path.length ? path.join('-') + '-' : '') + propName;
 	var chunk = ['<div class="' + propName +'" data-datatype="' + propConfig.type + '">'];
