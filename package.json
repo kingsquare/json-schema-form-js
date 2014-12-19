@@ -1,0 +1,12 @@
+{
+  "name": "kingsquare-schema-form",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/form.js"
+  },
+  "author": "Kingsquare BV",
+  "license": "BSD-2-Clause",
+  "dependencies": { }
+}

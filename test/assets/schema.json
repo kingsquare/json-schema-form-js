@@ -1,0 +1,170 @@
+{
+  "type": "object",
+  "title": "Afgevaardigde",
+  "properties": {
+    "_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{24}$",
+      "inputType": [
+        "hidden"
+      ]
+    },
+    "gender": {
+      "description": "Describes gender, leave empty if unknown",
+      "title": "Geslacht",
+      "type": "string",
+      "enum": [
+        "M",
+        "F",
+        ""
+      ],
+      "options": {
+        "enum_titles": [
+          "Man",
+          "Vrouw",
+          "Onbekend"
+        ]
+      },
+      "name": "gender"
+    },
+    "initials": {
+      "description": "Bijv. J.W.",
+      "title": "Initialen",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Z\\.]*$",
+      "name": "initials"
+    },
+    "middleName": {
+      "description": "Bijv. de",
+      "title": "Tussenvoegsel(s)",
+      "type": "string",
+      "name": "middleName"
+    },
+    "lastName": {
+      "description": "Bijv. Vries",
+      "title": "Achternaam",
+      "type": "string",
+      "minLength": 1,
+      "name": "lastName"
+    },
+    "position": {
+      "title": "Functie",
+      "type": "string"
+    },
+    "phoneNumber": {
+      "description": "A phone or fax number",
+      "title": "Telefoonnummer",
+      "type": "object",
+      "name": "PhoneNumber",
+      "required": [
+        "areaCode",
+        "subscriberNumber"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{24}$",
+          "inputType": [
+            "hidden"
+          ]
+        },
+        "areaCode": {
+          "description": "Bijv. 033",
+          "title": "Netnummer",
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\d+$",
+          "name": "areaCode"
+        },
+        "subscriberNumber": {
+          "description": "Bijv. 2473400 - Abonneenummer: het laatste deel van het telefoonnummer",
+          "title": "Abonneenummer",
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\d+$",
+          "name": "subscriberNumber"
+        }
+      }
+    },
+    "emailAddress": {
+      "description": "Bijv. jan.devries@example.com",
+      "title": "E-mailadres",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$",
+      "name": "emailAddress"
+    },
+    "interests": {
+      "title": "Interesse en kennisgebieden",
+      "description": "Interesse en kennisgebieden",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Asset management",
+          "Automatiserings tools voor service management",
+          "Competentie management",
+          "Configuratie beheer",
+          "Customer experience",
+          "Customer intimacy",
+          "Customer journey",
+          "Customer satisfaction",
+          "Express services",
+          "Functioneringsgesprekken",
+          "Imago kleding",
+          "Inrichting bedrijfsvoertuigen",
+          "ITIL",
+          "Klantentevredenheidsonderzoek",
+          "Lifecycle Management",
+          "Meetgereedschap",
+          "Nachtlevering",
+          "NSP (Net Promoter Score)",
+          "Operational excellence",
+          "Opleidingen - soft skills",
+          "Opleidingen - technisch",
+          "Predictive Maintenance",
+          "Prestatie contracten",
+          "Remote monitoring",
+          "Remote service",
+          "Repair Management",
+          "Service excellence",
+          "Service Level Agreements",
+          "Service Management Systemen",
+          "Service marketing",
+          "Spare parts management",
+          "Toestand afhankelijk onderhoud",
+          "Track & Trace"
+        ]
+      },
+      "type": "array",
+      "format": "table",
+      "name": "interests"
+    },
+    "other": {
+      "title": "Aanvullende interessegebieden",
+      "description": "Aanvullende interessegebieden",
+      "type": "string",
+      "name": "other"
+    },
+    "gremia": {
+      "type": "boolean",
+      "title": "Bent u bereid actief deel te nemen?"
+    },
+    "wish": {
+      "title": "Gewenste aanvulling op huidige aanbod van de activiteiten",
+      "description": "Gewenste aanvulling op huidige aanbod van de activiteiten",
+      "type": "string",
+      "options": {
+        "renderHint": "textarea"
+      },
+      "name": "wish"
+    }
+  },
+  "required": [
+    "gender",
+    "initials",
+    "lastName",
+    "phoneNumber",
+    "emailAddress"
+  ]
+}
