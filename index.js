@@ -26,7 +26,7 @@ var renderEnum = function (propConfig, path, value) {
 
 		default:
 			chunk.push('<select name="' + name + '" id="' + id + '" class="radiogroup">');
-			propConfig['enum'].forEach(function (key, optionValue) {
+			propConfig['enum'].forEach(function (optionValue, key) {
 				chunk.push('<option value="' + optionValue +'"' +
 				((optionValue === value) ? ' selected' : '' ) +
 				'>' + (enumTitles[key] || optionValue) + '</option>');
