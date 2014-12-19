@@ -38,6 +38,7 @@ var renderEnum = function (propConfig, path, value) {
 };
 
 var renderChunk = function (path, propConfig, value) {
+	console.log(path);
 	var propName = path.pop();
 	var id = (path.length ? path.join('-') + '-' : '') + propName;
 	var chunk = ['<div class="' + propName +'" data-datatype="' + propConfig.type + '">'];
@@ -186,8 +187,9 @@ var renderForm = function (schema, path, data) {
 		return chunks.join('');
 	}
 
-	Object.keys(schema.properties).forEach(function (propName) {
-		var propConfig = schema.properties[propName];
+	Object.keys(schema.properties).forEach(function (propKey) {
+		var propConfig = schema.properties[propKey];
+		var propName = propConfig.title;
 		path.slice(0);
 		path.push(propName);
 		chunks.push(renderChunk(path, propConfig, data[propName]));
