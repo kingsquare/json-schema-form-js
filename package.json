@@ -1,7 +1,7 @@
 {
   "name": "json-schema-form-js",
   "version": "0.0.1",
-  "description": "",
+  "description": "Generate plain HTML forms based on JSON schema descriptions",
   "main": "index.js",
   "scripts": {
     "test": "node test/form.js"
