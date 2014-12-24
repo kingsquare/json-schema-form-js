@@ -9,6 +9,7 @@
   "author": "Kingsquare BV",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "jquery": "~1.11.2"
   }
 }
